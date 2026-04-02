@@ -162,10 +162,10 @@ class GameBox:
         index = mover.get('coord_index')
         operation = getattr(operator, mover.get('operation'))
 
-        new_coordinates[index] = operation(
+        new_coordinates[index] = int(operation(
             new_coordinates[index],
             STEP_SIZES[index]
-        )
+        ))
 
         # Wrap position horizontally
         width = len(self.map_matrix[0])
@@ -174,7 +174,7 @@ class GameBox:
         if new_coordinates[1] >= width - 1:
             new_coordinates[1] = 1
 
-        y, x = new_coordinates
+        y, x = int(new_coordinates[0]), int(new_coordinates[1])
 
         if self.map_matrix[y][x] != self.chars['wall']:
             return new_coordinates

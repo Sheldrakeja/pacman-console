@@ -221,7 +221,7 @@ class PacmanGame():
 
     def food_eaten(self):
         y, x = self.pacman.current_position
-        return self.game_box.map_matrix[y][x] == DATA['map_chars']['food']
+        return self.game_box.map_matrix[int(y)][int(x)] == DATA['map_chars']['food']
 
 
     def ghost_touched(self):
@@ -302,4 +302,13 @@ class PacmanGame():
                     self.start_new_game()
 
 
-PacmanGame()
+if __name__ == '__main__':
+    try:
+        PacmanGame()
+    except KeyboardInterrupt:
+        curses.endwin()
+    except Exception as e:
+        curses.endwin()
+        print("Error:", e)
+        import traceback
+        traceback.print_exc()

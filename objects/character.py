@@ -76,14 +76,14 @@ class Character():
             color = self.game_box.color_matrix[y][x]
 
         self.game_box.map_box.addstr(
-            y,
-            x,
+            int(y),
+            int(x),
             char,
             color
         )
 
         if update:
-            self.game_box.map_matrix[y][x] = char
+            self.game_box.map_matrix[int(y)][int(x)] = char
 
 
 
