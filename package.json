@@ -1,0 +1,20 @@
+{
+  "name": "pacman-game",
+  "version": "1.0.0",
+  "description": "Web-based Pacman game",
+  "main": "server.py",
+  "scripts": {
+    "start": "python server.py",
+    "build": "echo 'Build complete'"
+  },
+  "engines": {
+    "node": "18.x",
+    "python": "3.9.x"
+  },
+  "keywords": ["pacman", "game"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
